@@ -15,7 +15,7 @@ class CreateHargaKirimTable extends Migration
     {
         Schema::create('harga_kirim', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('id_kelurahan');
+            $table->unsignedBigInteger('id_keluarahan');
             $table->unsignedBigInteger('id_jasa');
             $table->integer('hari');
             $table->integer('harga');
