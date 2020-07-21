@@ -10,6 +10,7 @@
 @endsection
 
 @section('content')
+{{-- 
 <div class="row">
     <div class="col-lg-3">
         <div class="card card-eco">
@@ -21,7 +22,7 @@
                         <p class="mb-0 text-muted text-truncate"><span class="text-success"><i class="mdi mdi-trending-up"></i>8.5%</span>Up From Yesterday</p>
                     </div><!--end col-->
                     <div class="col-4 text-center align-self-center">
-                        <!-- <span class="card-eco-icon">👳🏻</span> -->
+                        <!-- <span class="card-eco-icon"></span> -->
                         <i class="dripicons-user-group card-eco-icon  align-self-center"></i>  
                     </div>  <!--end col-->                                                                           
                 </div> <!--end row-->
@@ -710,6 +711,7 @@
         </div><!--end card-->
     </div><!--end col-->                        
 </div><!--end row-->
+ --}}
 
 @endsection
 

@@ -2,7 +2,7 @@
 <div class="left-sidenav">
     <ul class="metismenu left-sidenav-menu">
         <li class="@yield('Dashboard')">
-            <a href="javascript: void(0);"><i class="ti-bar-chart"></i><span>Dashboard</span></a>
+            <a href="{{ route('admin') }}"><i class="ti-bar-chart"></i><span>Dashboard</span></a>
         </li>
 
         <li>
@@ -29,7 +29,7 @@
             </ul>                        
         </li>
 
-        <li>
+        {{-- <li>
             <a href="javascript: void(0);"><i class="ti-layers-alt"></i><span>Pages</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
             <ul class="nav-second-level" aria-expanded="false">
                 <li class="nav-item"><a class="nav-link" href="{{ asset('adminTools/pages/pages-profile.html') }}"><i class="ti-control-record"></i>Profile</a></li>
@@ -51,7 +51,7 @@
                 <li class="nav-item"><a class="nav-link" href="{{ asset('adminTools/authentication/auth-404.html') }}"><i class="ti-control-record"></i>Error 404</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ asset('adminTools/authentication/auth-500.html') }}"><i class="ti-control-record"></i>Error 500</a></li>
             </ul>
-        </li>
+        </li> --}}
     </ul>
 </div>
 <!-- end left-sidenav-->

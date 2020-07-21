@@ -42,14 +42,19 @@
 <script src="{{ asset('pelangganTools/js/main.js') }}"></script>
 <script src="{{ asset('pelangganTools/js/jquery.number.js') }}"></script>
 
+<script>
+    var width = $(window).width();
+    if (width >=970) {
+        window.location.href="{{ route('admin') }}"
+    }
+</script>
+
 
 @yield('scripts')
 
 <script>
     $('#tampilKeranjang').load('{{ route("keranjang.index") }}');
 </script>
-
-
 
 </body>
 

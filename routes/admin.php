@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('admin.dashboard.index');
-});
+})->name('admin');
 
 Route::resource('kategori', 'KategoriController');
 Route::resource('merek', 'MerekController');
