@@ -1,5 +1,8 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,7 +14,10 @@
 |
 */
 
-Route::get('/', 'Pelanggan\DashboardController@index');
+// Route::get('/', 'Pelanggan\DashboardController@index');
+Route::get('/', function(){
+    return redirect()->route('admin');
+});
 
 Auth::routes();
 
