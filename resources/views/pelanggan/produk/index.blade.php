@@ -12,7 +12,7 @@
                     <div class="tab-content jump">
                         <div id="shop-1" class="tab-pane active pt-5">
                             <div class="row">
-                                @foreach ($produk as $item)
+                                @forelse ($produk as $item)
                                     <div class="col-xl-3 col-lg-4 col-md-4 col-sm-5 col-6">
                                         <div class="product-wrap mb-35">
                                             <div class="product-img mb-15">
@@ -31,10 +31,14 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            
+
                                         </div>
                                     </div>
-                                @endforeach
+                                @empty
+                                <div class="col-xl-3 col-lg-4 col-md-4 col-sm-5 col-6">
+                                    <h5 class="text-center">Produk Tidak Ada</h5>
+                                </div>
+                                @endforelse
                             </div>
                         </div>
                         <div class="pagination-style text-center">

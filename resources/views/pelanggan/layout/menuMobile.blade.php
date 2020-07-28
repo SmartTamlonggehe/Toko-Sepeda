@@ -2,19 +2,19 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-6 atas">
-                <div class="mobile-search">
+                {{-- <div class="mobile-search">
                     <form class="search-form" action="#">
                         <input type="text" placeholder="Search entire store…">
                         <button class="button-search"><i class="la la-search"></i></button>
                     </form>
-                </div>
+                </div> --}}
             </div>
             <div class="col-6">
                 <div class="header-right-wrap">
                     @if (Auth::user())
                     <div class="cart-wrap common-style">
                         <div id="tampilKeranjang"></div>
-                    </div>    
+                    </div>
                     @endif
                     <div class="mobile-off-canvas">
                         <a class="mobile-aside-button" href="kemana"><i class="la la-navicon la-2x"></i></a>
@@ -28,12 +28,12 @@
 <div class="mobile-off-canvas-active">
     <a class="mobile-aside-close"><i class="la la-close"></i></a>
     <div class="header-mobile-aside-wrap">
-        <div class="mobile-search">
+        {{-- <div class="mobile-search">
             <form class="search-form" action="#">
                 <input type="text" placeholder="Search entire store…">
                 <button class="button-search"><i class="la la-search"></i></button>
             </form>
-        </div>
+        </div> --}}
         <div class="mobile-menu-wrap">
             <!-- mobile menu start -->
             <div class="mobile-navigation">
@@ -48,7 +48,7 @@
                                     <li><a href="{{ route('katProduk',$item->id) }}">{{ $item->nm_kategori }} </a></li>
                                 @endforeach
                             </ul>
-                        </li>                       
+                        </li>
                     </ul>
                 </nav>
                 <!-- mobile menu navigation end -->
@@ -68,7 +68,7 @@
                     </ul>
                 </div>
             </div>
-            @else 
+            @else
             <a href="{{ route('loginPelanggan') }}">Login</a>
             @endif
         </div>
