@@ -1,7 +1,7 @@
 @extends('pelanggan.layout.default')
 
 @section('judul', 'Dashboard')
-    
+
 
 @section('content')
 
@@ -32,9 +32,9 @@
                         <div class="product-wrap product-border-1 product-img-zoom mb-30">
                             <div class="product-img">
                                 <a href="{{ route('detProduk', $item->id) }}"><img src="{{ $item->foto }}" alt="Gagal Dimuat"></a>
-                                <div class="product-action-2">
+                                {{-- <div class="product-action-2">
                                     <a title="Tambah Keranjang" href="#"><i class="la la-cart-plus"></i></a>
-                                </div>
+                                </div> --}}
                             </div>
                             <div class="product-content product-content-padding">
                                 <h4><a href="{{ route('detProduk', $item->id) }}">{{ $item->nm_produk }}</a></h4>

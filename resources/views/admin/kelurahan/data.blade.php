@@ -18,22 +18,6 @@
 </table>
 
 
-    <!-- Required datatable js -->
-    <script src="{{ asset('adminTools/plugins/datatables/jquery.dataTables.min.js') }}"></script>
-    <script src="{{ asset('adminTools/plugins/datatables/dataTables.bootstrap4.min.js') }}"></script>
-    <!-- Buttons examples -->
-    <script src="{{ asset('adminTools/plugins/datatables/dataTables.buttons.min.js') }}"></script>
-    <script src="{{ asset('adminTools/plugins/datatables/buttons.bootstrap4.min.js') }}"></script>
-    <script src="{{ asset('adminTools/plugins/datatables/jszip.min.js') }}"></script>
-    <script src="{{ asset('adminTools/plugins/datatables/pdfmake.min.js') }}"></script>
-    <script src="{{ asset('adminTools/plugins/datatables/vfs_fonts.js') }}"></script>
-    <script src="{{ asset('adminTools/plugins/datatables/buttons.html5.min.js') }}"></script>
-    <script src="{{ asset('adminTools/plugins/datatables/buttons.print.min.js') }}"></script>
-    <script src="{{ asset('adminTools/plugins/datatables/buttons.colVis.min.js') }}"></script>
-    <!-- Responsive examples -->
-    {{-- <script src="{{ asset('adminTools/plugins/datatables/dataTables.responsive.min.js') }}"></script>
-    <script src="{{ asset('adminTools/plugins/datatables/responsive.bootstrap4.min.js') }}"></script> --}}
-    <script src="{{ asset('adminTools/assets/pages/jquery.datatable.init.js') }}"></script>
 
     <script>
         $(document).ready(function($) {
@@ -52,7 +36,7 @@
             if (result.value) {
                 save_method="Ubah"
                 $.ajax({
-                    url: "kelurahan/"+href+"/edit", 
+                    url: "kelurahan/"+href+"/edit",
                     type: 'GET',
                     dataType: 'JSON',
                     beforeSend: function() {
@@ -104,6 +88,24 @@
         });
     });
     </script>
+
+    <!-- Required datatable js -->
+    <script src="{{ asset('adminTools/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('adminTools/plugins/datatables/dataTables.bootstrap4.min.js') }}"></script>
+    <!-- Buttons examples -->
+    <script src="{{ asset('adminTools/plugins/datatables/dataTables.buttons.min.js') }}"></script>
+    <script src="{{ asset('adminTools/plugins/datatables/buttons.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('adminTools/plugins/datatables/jszip.min.js') }}"></script>
+    <script src="{{ asset('adminTools/plugins/datatables/pdfmake.min.js') }}"></script>
+    <script src="{{ asset('adminTools/plugins/datatables/vfs_fonts.js') }}"></script>
+    <script src="{{ asset('adminTools/plugins/datatables/buttons.html5.min.js') }}"></script>
+    <script src="{{ asset('adminTools/plugins/datatables/buttons.print.min.js') }}"></script>
+    <script src="{{ asset('adminTools/plugins/datatables/buttons.colVis.min.js') }}"></script>
+    <!-- Responsive examples -->
+    {{-- <script src="{{ asset('adminTools/plugins/datatables/dataTables.responsive.min.js') }}"></script>
+    <script src="{{ asset('adminTools/plugins/datatables/responsive.bootstrap4.min.js') }}"></script> --}}
+    <script src="{{ asset('adminTools/assets/pages/jquery.datatable.init.js') }}"></script>
+
 
 <script>
     $(document).ready( function () {

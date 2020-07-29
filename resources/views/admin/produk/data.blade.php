@@ -22,7 +22,7 @@
             <td>{{ $item->nm_produk }}</td>
             <td>{{ $item->merek->kategori->nm_kategori }}</td>
             <td>{{ $item->merek->nm_merek }}</td>
-            <td>{{ $item->berat }}</td> 
+            <td>{{ $item->berat }}</td>
             <td>@currency($item->harga)</td>
             <td>{{ $item->stok }}</td>
             <td>
@@ -40,29 +40,6 @@
         @endforeach
     </tbody>
 </table>
-
-
-<!-- Required datatable js -->
-<script src="{{ asset('adminTools/plugins/datatables/jquery.dataTables.min.js') }}"></script>
-<script src="{{ asset('adminTools/plugins/datatables/dataTables.bootstrap4.min.js') }}"></script>
-<script src="{{ asset('adminTools/assets/pages/jquery.datatable.init.js') }}"></script>
-<!-- Buttons examples -->
-<script src="{{ asset('adminTools/plugins/datatables/dataTables.buttons.min.js') }}"></script>
-<script src="{{ asset('adminTools/plugins/datatables/buttons.bootstrap4.min.js') }}"></script>
-<script src="{{ asset('adminTools/plugins/datatables/jszip.min.js') }}"></script>
-<script src="{{ asset('adminTools/plugins/datatables/pdfmake.min.js') }}"></script>
-<script src="{{ asset('adminTools/plugins/datatables/vfs_fonts.js') }}"></script>
-<script src="{{ asset('adminTools/plugins/datatables/buttons.html5.min.js') }}"></script>
-<script src="{{ asset('adminTools/plugins/datatables/buttons.print.min.js') }}"></script>
-<script src="{{ asset('adminTools/plugins/datatables/buttons.colVis.min.js') }}"></script>
-<!-- Responsive examples -->
-{{-- <script src="{{ asset('adminTools/plugins/datatables/dataTables.responsive.min.js') }}"></script>
-<script src="{{ asset('adminTools/plugins/datatables/responsive.bootstrap4.min.js') }}"></script> --}}
-{{-- Foto --}}
-<script src="{{ asset('adminTools/plugins/filter/isotope.pkgd.min.js') }}"></script>
-<script src="{{ asset('adminTools/plugins/filter/masonry.pkgd.min.js') }}"></script>
-<script src="{{ asset('adminTools/plugins/filter/jquery.magnific-popup.min.js') }}"></script>
-<script src="{{ asset('adminTools/assets/pages/jquery.gallery.init.js') }}"></script>
 
 
 
@@ -84,7 +61,7 @@
             save_method="Ubah"
             console.log(save_method);
             $.ajax({
-                url: "produk/"+href+"/edit", 
+                url: "produk/"+href+"/edit",
                 type: 'GET',
                 dataType: 'JSON',
                 beforeSend: function() {
@@ -149,6 +126,29 @@
     });
 });
 </script>
+
+<!-- Required datatable js -->
+<script src="{{ asset('adminTools/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('adminTools/plugins/datatables/dataTables.bootstrap4.min.js') }}"></script>
+<script src="{{ asset('adminTools/assets/pages/jquery.datatable.init.js') }}"></script>
+<!-- Buttons examples -->
+<script src="{{ asset('adminTools/plugins/datatables/dataTables.buttons.min.js') }}"></script>
+<script src="{{ asset('adminTools/plugins/datatables/buttons.bootstrap4.min.js') }}"></script>
+<script src="{{ asset('adminTools/plugins/datatables/jszip.min.js') }}"></script>
+<script src="{{ asset('adminTools/plugins/datatables/pdfmake.min.js') }}"></script>
+<script src="{{ asset('adminTools/plugins/datatables/vfs_fonts.js') }}"></script>
+<script src="{{ asset('adminTools/plugins/datatables/buttons.html5.min.js') }}"></script>
+<script src="{{ asset('adminTools/plugins/datatables/buttons.print.min.js') }}"></script>
+<script src="{{ asset('adminTools/plugins/datatables/buttons.colVis.min.js') }}"></script>
+<!-- Responsive examples -->
+{{-- <script src="{{ asset('adminTools/plugins/datatables/dataTables.responsive.min.js') }}"></script>
+<script src="{{ asset('adminTools/plugins/datatables/responsive.bootstrap4.min.js') }}"></script> --}}
+{{-- Foto --}}
+<script src="{{ asset('adminTools/plugins/filter/isotope.pkgd.min.js') }}"></script>
+<script src="{{ asset('adminTools/plugins/filter/masonry.pkgd.min.js') }}"></script>
+<script src="{{ asset('adminTools/plugins/filter/jquery.magnific-popup.min.js') }}"></script>
+<script src="{{ asset('adminTools/assets/pages/jquery.gallery.init.js') }}"></script>
+
 
 
 
