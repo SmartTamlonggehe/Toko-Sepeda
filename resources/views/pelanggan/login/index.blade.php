@@ -47,6 +47,9 @@
                                                 <a href="#">Forgot Password?</a>
                                             </div> --}}
                                             <button type="submit">Login</button>
+                                            <a class="btn btn-link" href="{{ route('password.request') }}">
+                                                {{ __('Lupa Password?') }}
+                                            </a>
                                         </div>
                                     </form>
                                 </div>

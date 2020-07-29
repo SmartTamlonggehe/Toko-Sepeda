@@ -11,7 +11,7 @@
             <div class="col-lg-7 col-md-12 ml-auto mr-auto">
                 <div class="login-register-wrapper">
                     <div class="login-register-tab-list nav">
-                        <a data-toggle="tab" href="#lg1">
+                        <a href="/pelanggan/loginKu">
                             <h4> login </h4>
                         </a>
                         <a data-toggle="tab" class="active" href="#lg2">
