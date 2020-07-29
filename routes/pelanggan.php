@@ -8,6 +8,9 @@ Route::get('produk/{id}', 'ProdukController@katProduk')->name('katProduk');
 Route::get('detProduk/{id}', 'ProdukController@detProduk')->name('detProduk');
 
 Route::get('loginKu', 'DashboardController@login')->name('loginPelanggan');
+Route::get('registerKu', function(){
+    return view('pelanggan.login.register');
+});
 
 
 Route::resource('keranjang', 'KeranjangController');

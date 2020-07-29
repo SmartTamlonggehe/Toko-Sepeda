@@ -11,7 +11,7 @@
         <div class="row">
             <div class="col-lg-6 col-md-6">
                 <div class="product-details-img-left">
-                    <img class="zoompro" src="{{ $item->foto }}" data-zoom-image="{{ $item->foto }}" alt="product-details-img">
+                    <img class="zoompro" src="{{ $item->getProduk() }}" data-zoom-image="{{ $item->getProduk() }}" alt="product-details-img">
                 </div>
             </div>
             <div class="col-lg-6 col-md-6">
@@ -32,7 +32,7 @@
                             <input type="hidden" name="id_produk" id="id_produk" value="{{ $item->id }}">
                             @if (Auth::user())
                                 <input type="hidden" name="id_user" id="id_user" value="{{ Auth::user()->id }}">
-                            @endif  
+                            @endif
                         </form>
                     </div>
                     <div class="pro-details-buy-now btn-hover btn-hover-radious">
@@ -100,7 +100,7 @@
             @foreach ($produkLain as $item)
             <div class="product-wrap">
                 <div class="product-img mb-15">
-                    <a href="{{ route('detProduk', $item->id) }}"><img src="{{ $item->foto }}" alt="product"></a>
+                    <a href="{{ route('detProduk', $item->id) }}"><img src="{{ $item->getProduk() }}" alt="product"></a>
                 </div>
                 <div class="product-content">
                     <span>{{ $item->merek->nm_merek }}</span>
@@ -114,7 +114,7 @@
                         </div> --}}
                     </div>
                 </div>
-            </div>               
+            </div>
             @endforeach
         </div>
     </div>
@@ -153,7 +153,7 @@
           e.preventDefault();
           var id = $('#id').val();
           var dataKu = $('#formKu').serialize();
-          if (save_method=="add") { 
+          if (save_method=="add") {
               url="{{ route('dosen.store') }}"
               method="POST"
           } else {
@@ -163,11 +163,11 @@
           $.ajax({
           url: url,
           type: method,
-          data: dataKu, 
+          data: dataKu,
           success: function(response) {
-                if (save_method=="add") { 
+                if (save_method=="add") {
                     pesan=swal('Berhasil Ditambahkan').catch(swal.noop)
-                    aksi=""  
+                    aksi=""
                 } else {
                     pesan=swal('Data Berhasil Diubah').catch(swal.noop)
                     aksi=$('.tampilModal').modal('hide')

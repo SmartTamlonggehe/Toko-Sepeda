@@ -16,7 +16,7 @@
                                     <div class="col-xl-3 col-lg-4 col-md-4 col-sm-5 col-6">
                                         <div class="product-wrap mb-35">
                                             <div class="product-img mb-15">
-                                                <a href="{{ route('detProduk', $item->id) }}"><img src="{{ $item->foto }}" alt="product"></a>
+                                                <a href="{{ route('detProduk', $item->id) }}"><img src="{{ $item->getProduk() }}" alt="product"></a>
                                             </div>
                                             <div class="product-content">
                                                 <h5>{{ $item->merek->kategori->nm_kategori }}</h5>
@@ -26,9 +26,9 @@
                                                     <div class="product-price">
                                                         <span>@currency($item->harga)</span>
                                                     </div>
-                                                    <div class="product-addtocart">
+                                                    {{-- <div class="product-addtocart">
                                                         <a title="Tambah Keranjang" href="#">Tambah Keranjang</a>
-                                                    </div>
+                                                    </div> --}}
                                                 </div>
                                             </div>
 
