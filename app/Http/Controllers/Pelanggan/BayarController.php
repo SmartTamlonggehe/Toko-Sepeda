@@ -6,6 +6,7 @@ use App\Bayar;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Keranjang;
+use App\Stakir;
 
 class BayarController extends Controller
 {
@@ -36,9 +37,11 @@ class BayarController extends Controller
     {
         $bayar= Bayar::with(['tujuan'=>function ($tujuan){
             $tujuan->where('id_user',auth()->user()->id);
-        }])->first();
+        }])->get();
+
+        $stakir=Stakir::all();
 
 
-        return view('pelanggan.bayar.index',compact('bayar'));
+        return view('pelanggan.bayar.index',compact('bayar','stakir'));
     }
 }

@@ -12,7 +12,7 @@
                 <li class="nav-item"><a class="nav-link" href="{{ route('merek.index') }}"><i class="ti-control-record"></i>Merek</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ route('produk.index') }}"><i class="ti-control-record"></i>Produk</a></li>
             </ul>
-        </li>                   
+        </li>
 
         <li>
             <a href="javascript: void(0);"><i class="ti-crown"></i><span>Ongkir</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
@@ -26,7 +26,14 @@
                 </li>
                 <li class="nav-item"><a class="nav-link" href="{{ route('jasa.index') }}"><i class="ti-control-record"></i>Jasa</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ route('hargaKirim.index') }}"><i class="ti-control-record"></i>Biaya Kirim</a></li>
-            </ul>                        
+            </ul>
+        </li>
+        <li>
+            <a href="javascript: void(0);"><i class="ti-crown"></i><span>Penjualan</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+            <ul class="nav-second-level" aria-expanded="false">
+                <li class="nav-item"><a class="nav-link" href="{{ route('pembayaran.index') }}"><i class="ti-control-record"></i>Pembayaran</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('pengiriman.index') }}"><i class="ti-control-record"></i>Pengiriman</a></li>
+            </ul>
         </li>
 
         {{-- <li>

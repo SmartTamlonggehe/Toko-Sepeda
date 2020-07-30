@@ -253,19 +253,19 @@
 
 <script>
     $(document).ready(function () {
-        $("#formBayar").on('submit',function(e){
-          var dataKu = $('#formBayar').serialize();
-              url="{{ route('tambahBayar') }}"
-              method="POST"
-          $.ajax({
-          url: url,
-          type: method,
-          data: dataKu,
-          success: function(response) {
+        // $("#formBayar").on('submit',function(e){
+        //   var dataKu = $('#formBayar').serialize();
+        //       url="{{ route('tambahBayar') }}"
+        //       method="POST"
+        //   $.ajax({
+        //   url: url,
+        //   type: method,
+        //   data: dataKu,
+        //   success: function(response) {
 
-          }
-          });
-        });
+        //   }
+        //   });
+        // });
     });
 
 </script>
