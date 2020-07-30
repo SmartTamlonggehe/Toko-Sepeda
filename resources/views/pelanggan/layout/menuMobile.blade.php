@@ -62,8 +62,8 @@
                 <a class="mobile-account-active" href="#">Akun <i class="la la-angle-down"></i></a>
                 <div class="lang-curr-dropdown account-dropdown-active">
                     <ul>
-                        <li><a href="#">Riwayat Beli</a></li>
-                        <li><a href="#">Profil</a></li>
+                        <li><a href="{{ route('lihatBayar') }}">Riwayat Beli</a></li>
+                        {{-- <li><a href="#">Profil</a></li> --}}
                         <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
                     </ul>
                 </div>

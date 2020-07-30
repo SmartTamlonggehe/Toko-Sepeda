@@ -53,7 +53,7 @@
                     success: function(data) {
                         // lakukan sesuatu jika data sudah terkirim
                         $('#id').val(data.id);
-                        $('#id_kelurahan').val(data.id_kelurahan); $('#id_kelurahan').trigger('change');
+                        $('#id_kelurahan').val(data.id_keluarahan); $('#id_kelurahan').trigger('change');
                         $('#id_jasa').val(data.id_jasa); $('#id_jasa').trigger('change');
                         $('#hari').val(data.hari);
                         $('#harga').val(data.harga);

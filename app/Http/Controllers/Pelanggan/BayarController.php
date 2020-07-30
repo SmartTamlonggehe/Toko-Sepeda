@@ -21,7 +21,7 @@ class BayarController extends Controller
         $bayar->save();
         $this->ubahKeranjang();
 
-        return view('pelanggan.bayar.index');
+        return redirect()->route('lihatBayar');
     }
 
     public function ubahKeranjang()
@@ -30,5 +30,15 @@ class BayarController extends Controller
             ->update([
                 'status'=>'Bayar',
             ]);
+    }
+
+    public function lihatBayar()
+    {
+        $bayar= Bayar::with(['tujuan'=>function ($tujuan){
+            $tujuan->where('id_user',auth()->user()->id);
+        }])->first();
+
+
+        return view('pelanggan.bayar.index',compact('bayar'));
     }
 }

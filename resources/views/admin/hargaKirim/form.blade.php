@@ -7,9 +7,9 @@
             <span aria-hidden="true">&times;</span>
             </button>
         </div>
-        <form id="formKu" method="POST" class="needs-validation" novalidate> 
+        <form id="formKu" method="POST" class="needs-validation" novalidate>
             @csrf
-            <input type="hidden" name="id" id="id">            
+            <input type="hidden" name="id" id="id">
             <div class="modal-body">
                 <div class="form-row">
                     <div class="col-md-12 mb-2">

@@ -25,7 +25,7 @@ class HargaKirimController extends Controller
             'kecamatan'=>$kecamatan,
             'kelurahan'=>$kelurahan,
             'jasa'=>$jasa,
-        ]); 
+        ]);
     }
 
     /**
@@ -76,7 +76,7 @@ class HargaKirimController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    { 
+    {
         $data = hargaKirim::find($id);
         return $data;
     }

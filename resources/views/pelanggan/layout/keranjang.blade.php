@@ -11,7 +11,7 @@
     <ul>
         @foreach ($menuKeranjang as $item)
         <li class="single-shopping-cart">
-            <div class="shopping-cart-img"> 
+            <div class="shopping-cart-img">
                 <a href="{{ route('detProduk', $item->produk->id) }}"><img alt="" src="{{ $item->produk->getProduk() }}"></a>
                 <div class="item-close">
                     <a href="#"><i class="sli sli-close"></i></a>
@@ -24,7 +24,7 @@
                 <p class="hargaProduk" id="hargaProduk" style="display: none">{{ $item->produk->harga *  $item->jmlh }}</p>
             </div>
             <div class="shopping-cart-delete">
-                <a data-id="{{ $item->id }}" id="hapusProdukKeranjang"><i class="la la-trash"></i></a>
+                <a data-id="{{ $item->id }}" class="hapusProdukKeranjang"><i class="la la-trash"></i></a>
             </div>
         </li>
         @endforeach
@@ -43,10 +43,10 @@
 
 
 <script>
-$('#hapusProdukKeranjang').on('click',function (){
+$('.hapusProdukKeranjang').on('click',function (){
     let id = $(this).data('id');
     console.log('hallo');
-    
+
     let confirm = new ConfirmClass();
     confirm.show({
     title: 'Yakin',
@@ -71,7 +71,7 @@ $('#hapusProdukKeranjang').on('click',function (){
 function hapusProdukKeranjang(id){
     let csrf_token=$('meta[name="csrf_token"]').attr('content');
     $.ajax({
-        url: "{{ url(keranjang/) }}" + id,
+        url: "/pelanggan/keranjang/" + id,
         type : "POST",
         data : {'_method' : 'DELETE', '_token' :csrf_token},
         success: function(response) {
@@ -107,7 +107,7 @@ let toast = new ToastClass();
 
     let sum = 0;
     $('.hargaProduk').each(function() {
-        sum += Number($(this).text());       
+        sum += Number($(this).text());
     });
     console.log(sum);
     $('.totalBelanja').append(sum)

@@ -1,13 +1,13 @@
 @extends('pelanggan.layout.default')
 
 @section('judul', 'Checkout')
-    
+
 @section('content')
 
 <div class="checkout-main-area pt-90 pb-90">
     <div class="container">
         <div id="tampil"></div>
-            
+
         <div class="checkout-wrap pt-30">
             <div class="row">
                 <div class="col-lg-7">
@@ -61,11 +61,11 @@
                                         <div class="col-lg-12">
                                             <button class="submit" type="submit">Tambah Penerima</button>
                                         </div>
-                                    </div>      
+                                    </div>
                                 </form>
-                            </div>  
+                            </div>
                         </div>
-                    </div>    
+                    </div>
                 </div>
                 <div class="col-lg-5">
                     <div class="your-order-area">
@@ -92,7 +92,7 @@
                                 <div class="your-order-info order-shipping">
                                     <ul>
                                         <li>
-                                            <select name="" id="pilihKiriman"></select> 
+                                            <select name="" id="pilihKiriman"></select>
                                             <p id="hargaKiriman"></p>
                                         </li>
                                     </ul>
@@ -110,7 +110,7 @@
                             </div>
                             <div class="payment-method">
                                 <div class="pay-top sin-payment">
-                                    <input id="payment_method_1" class="input-radio" type="radio" value="BRI" checked="checked" name="payment_method">
+                                    <input id="payment_method_1" class="input-radio radio-bank" type="radio" value="BRI" checked name="payment_method">
                                     <label for="payment_method_1"> Transfer Bank BRI </label>
                                     <div class="payment-box payment_method_bacs">
                                         <p>A\n: Luis </p>
@@ -118,7 +118,7 @@
                                     </div>
                                 </div>
                                 <div class="pay-top sin-payment">
-                                    <input id="payment-method-2" class="input-radio" type="radio" value="BCA" name="payment_method">
+                                    <input id="payment-method-2" class="input-radio radio-bank" type="radio" value="BCA" name="payment_method">
                                     <label for="payment-method-2"> Transfer Bank BCA </label>
                                     <div class="payment-box payment_method_bacs">
                                         <p>A\n: Opan </p>
@@ -135,7 +135,7 @@
                             @csrf
                             <input type="hidden" name="id_tujuan" id="id_tujuan">
                             <input type="hidden" name="id_haki" id="id_haki">
-                            <input type="hidden" name="bank" id="bank">
+                            <input type="hidden" value="BRI" name="bank" id="bank">
                             <input type="hidden" name="total_bayar" id="total_bayar">
                         </form>
                     </div>
@@ -155,7 +155,7 @@
           <button type="button" id="lanjutBayar" class="btn btn-danger">Yakin</button>
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
         </div>
-          
+
       </div>
     </div>
   </div>
@@ -186,7 +186,7 @@
                     $.each(data, function(key,val){
                         $('#id_kelurahan').append('<option value="' + val.id +'">' + val.nm_kelurahan + '</option>');
                     })
-                })                
+                })
             }else{
                 kelurahan.val("")
                 kelurahan.attr("disabled", "disabled")
@@ -199,11 +199,11 @@
 
 
 <script>
+
     $(document).ready(function(){
-        let inpuRadio=$('.input-radio').val()
-        $('#bank').val(inpuRadio)
-        $('.input-radio').change(function(){
+        $('.radio-bank').change(function(){
             $('#bank').val($(this).val())
+            console.log($(this).val());
         })
     })
     var acak=Math.floor(Math.random() * 901);
@@ -214,15 +214,34 @@
         $('.totalBayar').html(penjumlahan).number( true )
         $('#total_bayar').val(penjumlahan)
     }
-    
+
 </script>
 
 <script>
+    let toast = new ToastClass();
+    function showToast () {
+        toast.show({
+        loading: true,
+        onShow: function(){
+            setTimeout(function(){
+            toast.show({
+                text: 'Tujuan atau Bank Belum Dipilih',
+                duration: 1500,
+                onHide: function(){
+                console.log('Dihapus')
+                }
+            })
+            }, )
+        }
+        })
+    }
+
     $(document).ready(function(){
 
         $('#prosesPembayaran').click(function(){
             if (!$('#pilihKiriman').val()) {
-                return alert('Tujuan Belum Dipilih');
+                showToast();
+                return 0;
             }
             $('#tanyaToPembayaran').modal('show');
                 $('#lanjutBayar').on('click', function(){
@@ -232,7 +251,7 @@
     })
 </script>
 
-{{-- <script>
+<script>
     $(document).ready(function () {
         $("#formBayar").on('submit',function(e){
           var dataKu = $('#formBayar').serialize();
@@ -241,16 +260,15 @@
           $.ajax({
           url: url,
           type: method,
-          data: dataKu, 
+          data: dataKu,
           success: function(response) {
-            //   pesan
+
           }
           });
-          console.log(save_method)
         });
     });
 
-</script> --}}
+</script>
 
 
 

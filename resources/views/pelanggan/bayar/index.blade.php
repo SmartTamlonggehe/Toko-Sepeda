@@ -1,7 +1,16 @@
+@php
+    if ($bayar->bank=='BRI'){
+        $an='Luis';
+        $norek='123443123-21123231-12';
+    }else {
+        $an='Opan';
+        $norek='544-656-2323234';
+    }
+@endphp
+
 @extends('pelanggan.layout.default')
 
 @section('judul', 'Bayar')
-    
 
 @section('content')
 
@@ -16,14 +25,14 @@
                         <div class="col-lg-3 col-md-4">
                             <div class="myaccount-tab-menu nav" role="tablist">
                                 <a href="#dashboad" class="active" data-toggle="tab"><i class="fa fa-dashboard"></i>
-                                    Pembayaran</a>
-                                <?php 
+                                    Pembayaran </a>
+                                <?php
                                 $status=0;
                                 ?>
                                 @if ($status)
                                     <a href="#orders" data-toggle="tab"><i class="fa fa-cart-arrow-down"></i> Status Kirim</a>
                                 @endif
-                                
+
                             </div>
                         </div>
                         <!-- My Account Tab Menu End -->
@@ -40,22 +49,29 @@
                                                 <tr>
                                                     <td>Bank</td>
                                                     <td>:</td>
-                                                    <td>BRI</td>
+                                                    <td>{{ $bayar->bank }}</td>
                                                 </tr>
                                                 <tr>
                                                     <td>No. Rek</td>
                                                     <td>:</td>
-                                                    <td>123431321</td>
+                                                    <td>
+                                                        {{ $norek }}
+                                                    </td>
                                                 </tr>
                                                 <tr>
                                                     <td>A/n</td>
                                                     <td>:</td>
-                                                    <td>Jhon</td>
+                                                    <td>{{ $an }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Total Bayar</td>
+                                                    <td>:</td>
+                                                    <td>Rp. @currency($bayar->total_bayar)</td>
                                                 </tr>
                                                 <tr>
                                                     <td>Status</td>
                                                     <td>:</td>
-                                                    <td>Belum</td>
+                                                    <td>{{ $bayar->status }}</td>
                                                 </tr>
                                             </tbody>
                                         </table>
