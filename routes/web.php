@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 // Route::get('/', 'Pelanggan\DashboardController@index');
 Route::get('/', function(){
-    return redirect()->route('pelanggan');
+    return redirect()->route('admin');
 });
 
 Auth::routes(['verify'=>true]);
