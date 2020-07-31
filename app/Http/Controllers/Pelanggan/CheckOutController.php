@@ -25,7 +25,7 @@ class CheckOutController extends Controller
         ]);
     }
 
-    // Ambil id Kecamatan 
+    // Ambil id Kecamatan
     public function GetKelurahan($id)
     {
         $kelurahan= Kelurahan::where('id_kecamatan',$id)->get();
@@ -43,7 +43,7 @@ class CheckOutController extends Controller
         return view('pelanggan.checkout.data',[
             'tujuan'=>$tujuan,
         ]);
-        
+
     }
 
     public function GetJasa($idTujuan)
@@ -69,6 +69,8 @@ class CheckOutController extends Controller
         $Kategori->no_hp=$request->no_hp;
 
         $Kategori->save();
+
+        return redirect()->back();
     }
 
     /**
