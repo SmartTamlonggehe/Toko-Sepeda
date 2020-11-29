@@ -5,12 +5,12 @@
 
 @section('content')
 
-    <div class="slider-area slider-height-3 bg-img res-white-overly-xs" style="background-image:url({{ asset('pelangganTools/images/slider/background1.jpg') }});">
+    <div class="slider-area slider-height-3 bg-img res-white-overly-xs" style="background-image:url({{ asset('pelangganTools/images/slider/background2.jpeg') }});">
         <div class="container">
             <div class="row">
                 <div class="ml-auto col-lg-6 col-md-7 col-12">
                     <div class="slider-content-3">
-                        <h1 class="wow fadeInUp">Selamat Datang Di Toko <br>Sepeda Kasih Anugerah.</h1>
+                        <h1 class="wow fadeInUp">Selamat Datang Di Toko <br>BINTANG SEPEDA.</h1>
                             {{-- <p class="wow fadeInUp">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p> --}}
                             <div class="slider-btn-3 default-btn btn-hover hover-border-none">
                                 {{-- <a class="wow fadeInUp btn-color-white btn-size-md-2 btn-color-theme-bg border-radious-5 black-color" href="product-details.html">SHOP NOW</a> --}}
